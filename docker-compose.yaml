@@ -1,0 +1,48 @@
+version: '3.9'
+services:
+  devsafe_micro:
+    image: devsafe_ms:latest
+    container_name: devsafe_micro
+    build: .
+    ports:
+      - 9003:8000
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - devsafe_db
+    networks:
+      - devsafe
+
+  devsafe_db:
+    container_name: devsafe_db
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: devsafe_micro
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - ./storage/dbdata:/var/www/html/storage/dbdata
+    networks:
+      - devsafe
+
+  devsafe_pma:
+    container_name: devsafe_pma
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '9083:80'
+    depends_on:
+      - devsafe_db
+    links:
+      - devsafe_db:devsafe_db
+    environment:
+      PMA_HOSTS: devsafe_db
+      UPLOAD_LIMIT: 300M
+      PMA_PORT: 3306
+      PMA_PMADB: devsafe_micro
+    networks:
+      - devsafe
+
+networks:
+  devsafe:
