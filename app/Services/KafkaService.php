@@ -7,7 +7,6 @@ use App\Handlers\KafkaHandler;
 use Junges\Kafka\Config\Sasl;
 use Junges\Kafka\Consumers\Consumer;
 use Junges\Kafka\Facades\Kafka;
-use Junges\Kafka\Message\ConsumedMessage;
 use Junges\Kafka\Message\Message;
 
 class KafkaService
