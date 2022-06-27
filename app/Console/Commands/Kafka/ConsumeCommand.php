@@ -28,7 +28,7 @@ class ConsumeCommand extends Command
      */
     public function handle()
     {
-        $consumer = KafkaService::consumer(['devsafe_topic']);
+        $consumer = KafkaService::consumer(explode(',', env('KAFKA_CONSUMER_TOPIC', 'default')));
 
         $consumer->consume();
     }
