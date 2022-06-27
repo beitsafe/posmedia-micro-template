@@ -27,9 +27,11 @@ DB_PASSWORD=root
 
 **Below are the URLs to access this project and database.**
 
-Frontend URL: http://localhost:8003
+API URL: http://0.0.0.0:PORT
 
-Database URL: http://localhost:8083
+API Doc: http://0.0.0.0:PORT/api/documentation
+
+Database URL: http://0.0.0.0:PORT
 
 Database username: root
 
