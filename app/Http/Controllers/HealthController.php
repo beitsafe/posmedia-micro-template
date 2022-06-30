@@ -29,4 +29,13 @@ class HealthController extends Controller
             'message' => "This app is healthy"
         ], 200);
     }
+
+    public function json()
+    {
+        return response()->make(
+            file_get_contents(config('l5-swagger.defaults.paths.docs').'/'.config('l5-swagger.documentations.default.paths.docs_json')),
+            200,
+            ['content-type' => 'application/json']
+        );
+    }
 }

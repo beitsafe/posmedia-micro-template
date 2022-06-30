@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/v1/service/')->group(function () {
     Route::get('healthz', [HealthController::class, 'healthz']);
+    Route::get('json', [HealthController::class, 'json']);
+
+    // Write Your Service Routes
 });
