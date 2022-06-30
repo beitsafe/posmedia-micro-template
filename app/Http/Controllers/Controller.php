@@ -22,12 +22,12 @@ use Illuminate\Routing\Controller as BaseController;
  * )
  *
  * @OA\Server(
- *     url="http://localhost:8000/api/v1",
+ *     url="http://localhost:8000/api/v1/devsafe",
  *     description="Local API Server",
  * )
  *
  * @OA\Server(
- *     url="http://posmediacentre-2103936654.ap-southeast-2.elb.amazonaws.com/api/v1",
+ *     url="http://centrerefresh.positivemedia.com.au/api/v1/devsafe",
  *     description="Live API Server",
  * )
  *
