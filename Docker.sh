@@ -8,6 +8,8 @@ php artisan storage:link --env=prod
 
 php artisan migrate --force
 
+php artisan db:seed
+
 php artisan route:clear
 php artisan config:clear
 
@@ -15,7 +17,5 @@ php artisan config:clear
 chown -R www-data:www-data /var/www/html/storage
 chown -R www-data:www-data /var/www/html/public/storage
 echo "Permissions updated on public storage folder!"
-
-sleep 2
 
 php artisan serve --host 0.0.0.0
