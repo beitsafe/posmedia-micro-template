@@ -22,13 +22,22 @@ use Illuminate\Routing\Controller as BaseController;
  * )
  *
  * @OA\Server(
- *     url="http://localhost:8000/api/v1/devsafe",
+ *     url="http://127.0.0.1:8000/api/v1/devsafe",
  *     description="Local API Server",
  * )
  *
  * @OA\Server(
  *     url="http://centrerefresh.positivemedia.com.au/api/v1/devsafe",
  *     description="Live API Server",
+ * )
+ *
+ * @OA\SecurityScheme(
+ *    securityScheme="bearerAuth",
+ *    in="header",
+ *    name="Bearer Token",
+ *    type="http",
+ *    scheme="bearer",
+ *    bearerFormat="JWT",
  * )
  *
  */
