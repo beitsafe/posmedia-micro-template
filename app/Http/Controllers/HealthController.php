@@ -14,9 +14,9 @@ class HealthController extends Controller
      *     summary="Health Check",
      *     description="Health Check",
      *     operationId="health-check",
-     *     @OA\Response(response=200, description="Health Check" ),
-     *     @OA\Response(response=400, description="Bad request"),
-     *     @OA\Response(response=404, description="Resource Not Found"),
+     *     @OA\Response(response=200, description="Health Check", @OA\JsonContent()),
+     *     @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *     @OA\Response(response=404, description="Resource Not Found", @OA\JsonContent()),
      * )
      */
 

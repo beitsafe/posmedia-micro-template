@@ -25,10 +25,10 @@ class OptionController extends Controller
      *      tags={"Option"},
      *      summary="List of all options",
      *      security={ {"bearerAuth": {}} },
-     *      @OA\Response(response=200, description="List of all options"),
-     *      @OA\Response(response=400, description="Bad request"),
-     *      @OA\Response(response=401, description="Unauthenticated"),
-     *      @OA\Response(response=403, description="Forbidden")
+     *      @OA\Response(response=200, description="List of all options", @OA\JsonContent()),
+     *      @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *      @OA\Response(response=401, description="Unauthenticated", @OA\JsonContent()),
+     *      @OA\Response(response=403, description="Forbidden", @OA\JsonContent()),
      * )
      */
 
@@ -52,10 +52,10 @@ class OptionController extends Controller
      *              @OA\Property(property="option_value", type="string", example="value")
      *          ),
      *      ),
-     *      @OA\Response(response=201, description="Created option"),
-     *      @OA\Response(response=400, description="Bad request"),
-     *      @OA\Response(response=401, description="Unauthenticated"),
-     *      @OA\Response(response=403, description="Forbidden")
+     *      @OA\Response(response=201, description="Created option", @OA\JsonContent()),
+     *      @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *      @OA\Response(response=401, description="Unauthenticated", @OA\JsonContent()),
+     *      @OA\Response(response=403, description="Forbidden", @OA\JsonContent()),
      * )
      */
     public function store(BaseRequest $request): BaseResource
@@ -76,11 +76,11 @@ class OptionController extends Controller
      *          in="path",
      *          @OA\Schema(type="string", format="uuid")
      *      ),
-     *      @OA\Response(response=200, description="Show option"),
-     *      @OA\Response(response=400, description="Bad request"),
-     *      @OA\Response(response=401, description="Unauthenticated"),
-     *      @OA\Response(response=403,description="Forbidden"),
-     *      @OA\Response(response=404, description="Not Found")
+     *      @OA\Response(response=200, description="Show option", @OA\JsonContent()),
+     *      @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *      @OA\Response(response=401, description="Unauthenticated", @OA\JsonContent()),
+     *      @OA\Response(response=403,description="Forbidden", @OA\JsonContent()),
+     *      @OA\Response(response=404, description="Not Found", @OA\JsonContent()),
      * )
      */
     public function show($id): BaseResource
@@ -108,11 +108,11 @@ class OptionController extends Controller
      *              @OA\Property(property="option_value", type="string", example="value")
      *          ),
      *      ),
-     *      @OA\Response(response=202, description="Updated option"),
-     *      @OA\Response(response=400, description="Bad request"),
-     *      @OA\Response(response=401, description="Unauthenticated"),
-     *      @OA\Response(response=403, description="Forbidden"),
-     *      @OA\Response(response=404, description="Not Found")
+     *      @OA\Response(response=202, description="Updated option", @OA\JsonContent()),
+     *      @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *      @OA\Response(response=401, description="Unauthenticated", @OA\JsonContent()),
+     *      @OA\Response(response=403, description="Forbidden", @OA\JsonContent()),
+     *      @OA\Response(response=404, description="Not Found", @OA\JsonContent()),
      * )
      */
     public function update($id, BaseRequest $request): JsonResponse
@@ -133,11 +133,11 @@ class OptionController extends Controller
      *          in="path",
      *          @OA\Schema(type="string", format="uuid")
      *      ),
-     *      @OA\Response(response=204, description="Deleted option"),
-     *      @OA\Response(response=400, description="Bad request"),
-     *      @OA\Response(response=401, description="Unauthenticated"),
-     *      @OA\Response(response=403, description="Forbidden"),
-     *      @OA\Response(response=404, description="Not Found")
+     *      @OA\Response(response=204, description="Deleted option", @OA\JsonContent()),
+     *      @OA\Response(response=400, description="Bad request", @OA\JsonContent()),
+     *      @OA\Response(response=401, description="Unauthenticated", @OA\JsonContent()),
+     *      @OA\Response(response=403, description="Forbidden", @OA\JsonContent()),
+     *      @OA\Response(response=404, description="Not Found", @OA\JsonContent()),
      * )
      */
     public function delete($id): JsonResponse
