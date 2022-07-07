@@ -123,7 +123,7 @@ class OptionController extends Controller
     /**
      * @OA\Delete(
      *      path="/options/{id}",
-     *      operationId="sampelDelete",
+     *      operationId="optionDelete",
      *      tags={"Option"},
      *      summary="Delete existing option",
      *      security={ {"bearerAuth": {}} },
