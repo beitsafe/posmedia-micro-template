@@ -20,6 +20,7 @@ Route::prefix('/v1/devsafe/')->group(function () {
     Route::get('json', [HealthController::class, 'json']);
 
     // Write Your Service Routes
+
     Route::apiResources([
         'options' => OptionController::class
     ]);
