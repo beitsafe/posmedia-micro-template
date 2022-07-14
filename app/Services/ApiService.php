@@ -13,20 +13,20 @@ abstract class ApiService
 
     public function request($method, $path, $data = [])
     {
-        $response =  $this->getRequest($method, $path, $data);
+        $response = $this->getRequest($method, $path, $data);
 
         if ($response->successful()) {
-            return $response->json();
+            return $response->collect('data');
         }
 
-        throw new HttpException($response->status(),$response->body());
+        throw new HttpException($response->status(), $response->collect('error')->implode(','));
     }
 
     public function getRequest($method, $path, $data = [])
     {
         $default_headers = [
             'Content-Type' => 'application/json',
-            'Accept' => 'application/json'
+            'Accept'       => 'application/json'
         ];
 
         $headers = $default_headers + $this->headers;
