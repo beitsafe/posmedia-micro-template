@@ -19,7 +19,18 @@ abstract class ApiService
             return $response->collect('data');
         }
 
-        throw new HttpException($response->status(), $response->collect('error')->implode(','));
+        $this->errorHandler($response);
+    }
+
+    private function errorHandler($response)
+    {
+        $errorMessage = '';
+        if (config('app.debug')) {
+            $errorMessage .= get_called_class() . ' ==> ';
+        }
+        $errorMessage .= $response->collect('error')->implode(',');
+
+        throw new HttpException($response->status(), $errorMessage);
     }
 
     public function getRequest($method, $path, $data = [])
