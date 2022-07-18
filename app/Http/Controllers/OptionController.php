@@ -140,7 +140,7 @@ class OptionController extends Controller
      *      @OA\Response(response=404, description="Not Found", @OA\JsonContent()),
      * )
      */
-    public function delete($id): JsonResponse
+    public function destroy($id): JsonResponse
     {
         return response()->json($this->optionRepository->delete($id), Response::HTTP_NO_CONTENT);
     }
