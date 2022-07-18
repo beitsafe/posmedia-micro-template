@@ -12,5 +12,7 @@ class BaseModel extends Model
 
     public $timestamps = true;
 
+    protected $perPage = 10;
+
     protected $dates = ['deleted_at'];
 }
