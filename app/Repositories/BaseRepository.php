@@ -32,7 +32,7 @@ class BaseRepository implements EloquentRepositoryInterface
             });
         });
 
-        return $query->paginate($per_page);
+        return $query->paginate($per_page)->appends($attributes);;
     }
 
     public function create(array $attributes): Model
