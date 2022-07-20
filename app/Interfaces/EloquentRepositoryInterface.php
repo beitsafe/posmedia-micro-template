@@ -7,7 +7,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 interface EloquentRepositoryInterface
 {
-    public function all(): LengthAwarePaginator;
+    public function paginate(array $attributes): LengthAwarePaginator;
 
     public function create(array $attributes): Model;
 

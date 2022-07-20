@@ -9,6 +9,8 @@ class Option extends BaseModel
         'option_name', 'option_value'
     ];
 
+    public array $searchable = ['option_name'];
+
     public static function fetch($name)
     {
         return self::where('option_name', $name)->first();

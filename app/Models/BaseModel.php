@@ -15,4 +15,6 @@ class BaseModel extends Model
     protected $perPage = 10;
 
     protected $dates = ['deleted_at'];
+
+    public array $searchable = [];
 }

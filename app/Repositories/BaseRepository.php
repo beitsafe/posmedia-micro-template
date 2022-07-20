@@ -17,9 +17,24 @@ class BaseRepository implements EloquentRepositoryInterface
         $this->model = $model;
     }
 
-    public function all(): LengthAwarePaginator
+    public function paginate(array $attributes): LengthAwarePaginator
     {
-        return $this->model->paginate();
+        $search = $attributes['q'] ?? null;
+        $per_page = $attributes['per_page'] ?? null;
+
+        $query = $this->model->newQuery();
+        $searchColumns = $this->model->searchable ?? $this->model->getFillable();
+
+        $query->when($searchColumns && $search, function ($query) use ($search, $searchColumns) {
+            $query->where(function ($q) use ($search, $searchColumns) {
+                // Prepare search by all searchable columns
+                array_map(function ($column) use ($q, $search) {
+                    return $q->orWhere($column, 'LIKE', "%{$search}%");
+                }, $searchColumns);
+            });
+        });
+
+        return $query->paginate($per_page);
     }
 
     public function create(array $attributes): Model
