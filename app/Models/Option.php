@@ -11,9 +11,13 @@ class Option extends BaseModel
 
     public array $searchable = ['option_name'];
 
-    public static function fetch($name)
+    public static function fetch($name, $default = null)
     {
-        return self::where('option_name', $name)->first();
+        if ($row = self::where('option_name', $name)->first()) {
+            return $row->option_value;
+        }
+
+        return $default;
     }
 
     public static function modify($name, $value = null)
