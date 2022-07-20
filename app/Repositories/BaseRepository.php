@@ -5,8 +5,6 @@ namespace App\Repositories;
 use App\Interfaces\EloquentRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
 
 class BaseRepository implements EloquentRepositoryInterface
 {
