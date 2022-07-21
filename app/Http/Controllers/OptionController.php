@@ -6,6 +6,7 @@ use App\Http\Requests\BaseRequest;
 use App\Http\Resources\BaseResource;
 use App\Interfaces\OptionRepositoryInterface;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Http\Response;
 
@@ -32,9 +33,9 @@ class OptionController extends Controller
      * )
      */
 
-    public function index(): ResourceCollection
+    public function index(Request $request): ResourceCollection
     {
-        return BaseResource::collection($this->optionRepository->all());
+        return BaseResource::collection($this->optionRepository->paginate($request->all()));
     }
 
     /**
