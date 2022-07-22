@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Handlers;
+namespace App\Services\Concerns;
 
-use App\Traits\KafkaPerform;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 

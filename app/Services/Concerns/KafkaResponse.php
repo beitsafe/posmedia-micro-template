@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace App\Services\Concerns;
 
 trait KafkaResponse
 {

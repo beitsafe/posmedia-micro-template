@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Traits;
-
-use App\Services\KafkaService;
+namespace App\Services\Concerns;
 
 trait KafkaPerform
 {

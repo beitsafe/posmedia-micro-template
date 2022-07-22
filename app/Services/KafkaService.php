@@ -3,7 +3,7 @@
 namespace App\Services;
 
 
-use App\Handlers\KafkaHandler;
+use App\Services\Concerns\KafkaHandler;
 use Junges\Kafka\Config\Sasl;
 use Junges\Kafka\Consumers\Consumer;
 use Junges\Kafka\Facades\Kafka;
