@@ -5,7 +5,7 @@ namespace App\Console\Commands\Kafka;
 use App\Services\KafkaService;
 use Illuminate\Console\Command;
 
-class ConsumeCommand extends Command
+class Consume extends Command
 {
     /**
      * The name and signature of the console command.
