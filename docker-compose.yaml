@@ -46,3 +46,4 @@ services:
 
 networks:
   devsafe:
+    name: posmedia_bridge
