@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Response;
 class HealthController extends Controller
 {
     /**
-     * @OA\GET(
+     * @OA\Get(
      *     path="/healthz",
      *     tags={"Health"},
      *     summary="Health Check",

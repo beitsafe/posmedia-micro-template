@@ -20,7 +20,7 @@ class OptionController extends Controller
     }
 
     /**
-     * @OA\GET(
+     * @OA\Get(
      *      path="/options",
      *      operationId="optionList",
      *      tags={"Option"},
